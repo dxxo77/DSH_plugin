@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Quota balance">
+  <rect x="4" y="15" width="56" height="36" rx="9" fill="#2b7fd4"/>
+  <path d="M4 25a9 9 0 0 1 9-9h38a9 9 0 0 1 9 9v1H4z" fill="#1b5fa6"/>
+  <circle cx="45" cy="39" r="7" fill="#ffd166"/>
+  <circle cx="45" cy="39" r="2.6" fill="#1b5fa6"/>
+</svg>

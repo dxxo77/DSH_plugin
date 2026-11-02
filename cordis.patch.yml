@@ -1,0 +1,3 @@
+- insert:
+    - id: quota-balance
+      name: '@local/quota-balance'
