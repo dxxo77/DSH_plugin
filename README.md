@@ -82,6 +82,21 @@ GET /plugin/quota-balance/status
 - 改 `client.js`：保存后页面会热更新（本插件实测即时生效）。
 - 改 `index.js`：在插件管理里把本插件**禁用再启用**即可重载 Host 模块，不必重启应用（已实测）；之后点卡片里的「刷新」取一次新数据。
 
+## 收录到插件市场
+
+DSH 的插件市场（`dshmarket`）不自己维护目录，列表来自 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)：往那里交一个 YAML 条目，站点与市场会自动读入。本插件提交的条目是 `data/plugins/dxxo77__DSH_plugin.yml`，分类 `usage`（Usage & Billing）：
+
+```yaml
+url: https://github.com/dxxo77/DSH_plugin
+name: dxxo77/DSH_plugin
+category: usage
+description:
+  en: "Shows the account balance at the left of the composer status row; clicking it opens a panel with the normal and bonus wallet split, the refresh time and a top-up link."
+  zh: "在输入框下方的用量行最左侧显示账户余额，点开可查看普通余额与赠送额度的分项、更新时间，并可跳转充值。"
+```
+
+市场详情页的截图来自本仓库的 `screenshots.json`（按顺序引用 `docs/` 下的三张实拍图），改图只需推本仓库，不必再动列表。
+
 ## 许可证
 
 [MIT](LICENSE) © 2026 dxxo77
