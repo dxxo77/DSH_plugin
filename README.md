@@ -12,7 +12,7 @@
 2. 在 DSH 的插件管理里安装该目录：`install_bundle` 指向仓库路径；
 3. 安装后即时生效，输入框下方的用量行最左侧会出现余额；点它展开明细。
 
-卸载：在插件管理里移除 `@local/quota-balance` 即可。
+卸载：在插件管理里移除 `dsh-plugin-quota-balance` 即可。
 
 ## 结构
 
@@ -67,3 +67,8 @@ GET /plugin/quota-balance/status
 
 - 改 `client.js`：保存后页面会热更新（本插件实测即时生效）。
 - 改 `index.js`：在插件管理里把本插件**禁用再启用**即可重载 Host 模块，不必重启应用（已实测）；之后点卡片里的「刷新」取一次新数据。
+
+## 许可证
+
+[MIT](LICENSE) © 2026 dxxo77
+

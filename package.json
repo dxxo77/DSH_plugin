@@ -1,5 +1,5 @@
 {
-  "name": "@local/quota-balance",
+  "name": "dsh-plugin-quota-balance",
   "version": "1.0.0",
   "private": true,
   "type": "module",

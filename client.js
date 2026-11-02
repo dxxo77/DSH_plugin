@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: '@local/quota-balance',
+  id: 'dsh-plugin-quota-balance',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
