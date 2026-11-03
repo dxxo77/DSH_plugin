@@ -50,9 +50,13 @@ window.__ModuleLoader__.load({
     const CHIP = {
       display: 'inline-flex',
       alignItems: 'center',
-      padding: 0,
+      // Padding plus an equal negative margin: the hover plate gets room to
+      // breathe without moving the text off the baseline the shipped pills sit
+      // on, so toggling hover never shifts the row.
+      padding: '2px 8px',
+      margin: '-2px -8px',
+      borderRadius: 8,
       border: 'none',
-      background: 'transparent',
       fontFamily: 'inherit',
       fontSize: 12,
       fontWeight: 400,
@@ -87,6 +91,13 @@ window.__ModuleLoader__.load({
 .quota-balance-refresh{font-family:inherit;font-size:12px;padding:3px 8px;border-radius:6px;border:1px solid rgba(180,180,180,calc(var(--we-border-alpha, 0.35) * 1.3));background:transparent;color:var(--dsw-alias-label-secondary, #c9c9d1);cursor:pointer}
 .quota-balance-refresh:hover{background:var(--dsw-alias-bg-overlay, rgba(255,255,255,.08))}
 .quota-balance-link{font-size:12px;color:var(--we-accent, var(--dsw-alias-brand-primary, #7db3ff));text-decoration:none}
+/* Hover plate for the chip: the app's status pills light up under the pointer,
+   so the balance borrows the same material — a light wash over the composer,
+   about 9% of the label colour, which stays readable on both themes. */
+.quota-balance-chip{background:transparent;transition:background-color .12s ease}
+.quota-balance-chip:hover{background:rgba(255,255,255,.09);background:color-mix(in srgb, var(--dsw-alias-label-primary, #ffffff) 9%, transparent)}
+.quota-balance-chip:active{background:rgba(255,255,255,.14);background:color-mix(in srgb, var(--dsw-alias-label-primary, #ffffff) 14%, transparent)}
+.quota-balance-chip:focus-visible{outline:2px solid var(--we-accent, var(--dsw-alias-brand-primary, #7db3ff));outline-offset:2px}
 `;
 
     /**
@@ -267,6 +278,7 @@ window.__ModuleLoader__.load({
         h('button', {
           ref: buttonRef,
           type: 'button',
+          className: 'quota-balance-chip',
           onClick: () => setOpen((value) => !value),
           'aria-haspopup': 'dialog',
           'aria-expanded': open,
@@ -326,6 +338,9 @@ window.__ModuleLoader__.load({
 
         ctx.slots.inject('conversation.composer.dock', () => {
           const t = ctx.locale.bind('quota-balance');
+          // The chip styles live in the same sheet as the panel, so it has to be
+          // in the page before the chip renders — not on first panel open.
+          injectPanelCss();
           return ctx.slots.register({
             name: 'conversation.composer.dock',
             id: 'quota-balance',
