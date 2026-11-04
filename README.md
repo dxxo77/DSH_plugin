@@ -87,15 +87,15 @@ GET /plugin/quota-balance/status
 
 ## 收录到插件市场
 
-DSH 的插件市场（`dshmarket`）不自己维护目录，列表来自 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)：往那里交一个 YAML 条目，站点与市场会自动读入。本插件提交的条目是 `data/plugins/dxxo77__DSH_plugin.yml`，分类 `usage`（Usage & Billing）：
+DSH 的插件市场（`dshmarket`）不自己维护目录，列表来自 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)：往那里交一个 YAML 条目，站点与市场会自动读入。本插件提交的条目是 `data/plugins/dxxo77__dsh-plugin-quota-balance.yml`，分类 `usage`（Usage & Billing）：
 
 ```yaml
-url: https://github.com/dxxo77/DSH_plugin
-name: dxxo77/DSH_plugin
+url: https://github.com/dxxo77/dsh-plugin-quota-balance
+name: dxxo77/dsh-plugin-quota-balance
 category: usage
 description:
-  en: "Shows the account balance at the left of the composer status row; clicking it opens a panel with the normal and bonus wallet split, the refresh time and a top-up link."
-  zh: "在输入框下方的用量行最左侧显示账户余额，点开可查看普通余额与赠送额度的分项、更新时间，并可跳转充值。"
+  en: "Shows the DeepSeek account balance at the left of the composer status row; clicking it opens a panel with the normal and bonus wallet split, the refresh time and a top-up link. The chip and panel read the host surface tokens, so they follow the dsh-plugin-wallpaper-engine glass settings, theme and wallpaper changes."
+  zh: "在输入框下方的用量行最左侧显示账户余额，点开可查看普通余额与赠送额度的分项、更新时间，并可跳转充值；徽标与浮层读取宿主表面 token，可跟随 dsh-plugin-wallpaper-engine 的玻璃参数、明暗主题与壁纸切换。"
 ```
 
 市场详情页的截图来自本仓库的 `screenshots.json`（按顺序引用 `docs/` 下的三张实拍图），改图只需推本仓库，不必再动列表。
